@@ -13,10 +13,42 @@
 function Contactform(){
 
     $content = '';
+    $content .= '<style>';
+    $content .= '.form-container {';
+    $content .= '    max-width: 600px;';
+    $content .= '    margin: 0 auto;';
+    $content .= '}';
+    // $content .= 'label {';
+    // $content .= '    font-weight: bold;';
+    // $content .= '    font-family: "Noto Sans", sans-serif;'; 
+    // $content .= '    color: white;'; // Set label color to white
+    // $content .= '}';
+    $content .= 'input[type="text"], input[type="email"], textarea {';
+    $content .= '    width: 100%;';
+    $content .= '    padding: 10px;';
+    $content .= '    margin-bottom: 10px;';
+    $content .= '    border: 1px solid white;'; // Set input field border color to white
+    $content .= '    color: white;'; // Set input field text color to white
+    $content .= '    background-color: transparent;'; // Set input field background color to transparent
+    $content .= '}';
+    $content .= 'input[type="submit"] {';
+    $content .= '    background-color: #0F77BE;';
+    $content .= '    color: white;';
+    $content .= '    padding: 10px 20px;';
+    $content .= '    border: none;';
+    $content .= '    border-radius: 5%;'; 
+    $content .= '    font-family: "Lato", sans-serif;';
+    $content .= '    cursor: pointer;';
+    $content .= '}';
+    $content .= '</style>';
 
+
+
+
+    $content .= '<div class="form-container">';
     $content .= '<form method="post" action="https://formspree.io/f/mlekqqjp" >';
     
-    $content .= '<br />';
+    // $content .= '<br />';
     $content .= '<input type="text" name="name" placeholder="Enter your name">';
 
     $content .= '<br />';
@@ -37,6 +69,7 @@ function Contactform(){
     $content .= '<input type="submit" name="send" value="Submit">';
 
     $content .= '</form>';
+    $content .= '</div>';
 
     return $content;
 };
