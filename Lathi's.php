@@ -15,28 +15,33 @@ function Contactform(){
     $content = '';
     $content .= '<style>';
     $content .= '.form-container {';
-    $content .= '    max-width: 600px;';
+    $content .= '    width: 80%;';
     $content .= '    margin: 0 auto;';
+    $content .= '    align-items: center;';
+    $content .= '    justify-content: center;';
     $content .= '}';
-    // $content .= 'label {';
-    // $content .= '    font-weight: bold;';
-    // $content .= '    font-family: "Noto Sans", sans-serif;'; 
-    // $content .= '    color: white;'; // Set label color to white
-    // $content .= '}';
-    $content .= 'input[type="text"], input[type="email"], textarea {';
-    $content .= '    width: 100%;';
+    $content .= '.first-row, .second-row {';
+    $content .= 'display: flex;';
+    $content .= 'justify-content: space-around;';
+    $content .= '}';
+    $content .= 'input[type="text"], input[type="email"], input[name="phone", textarea, select{';
+    $content .= '    width: 90% !important;';
+    $content .= '   height: 40px;';
     $content .= '    padding: 10px;';
     $content .= '    margin-bottom: 10px;';
     $content .= '    border: 1px solid white;'; // Set input field border color to white
     $content .= '    color: white;'; // Set input field text color to white
     $content .= '    background-color: transparent;'; // Set input field background color to transparent
     $content .= '}';
+    $content .= ' .second-row {';
+    $content .= '   margin-bottom: 3rem;';
+    $content .= '}';
     $content .= 'input[type="submit"] {';
-    $content .= '    background-color: #0F77BE;';
-    $content .= '    color: white;';
+    $content .= '    background-color: #2E2F31;';
+    $content .= '    color: #DC143C;';
     $content .= '    padding: 10px 20px;';
-    $content .= '    border: none;';
-    $content .= '    border-radius: 5%;'; 
+    $content .= '    border: 2px solid #DC143C;';
+    $content .= '   align-item: center;';
     $content .= '    font-family: "Lato", sans-serif;';
     $content .= '    cursor: pointer;';
     $content .= '}';
@@ -48,24 +53,24 @@ function Contactform(){
     $content .= '<div class="form-container">';
     $content .= '<form method="post" action="https://formspree.io/f/mlekqqjp" >';
     
-    // $content .= '<br />';
-    $content .= '<input type="text" name="name" placeholder="Enter your name">';
+    $content .= '<div class="first-row">';
+    $content .= '<input type="text" name="name" placeholder="Enter your name" style="width: 90%;">';
+
+    $content .= '<input type="email" name="email" placeholder="Email Address" style="width: 90%;">';
+    $content .= '</div>';
 
     $content .= '<br />';
-    $content .= '<input type="email" name="email" placeholder="Email Address>';
+    $content .= '<div class=" second-row">';
+    $content .= '<input type="phone" name="phone" placeholder="Phone Number" style="width: 90%;">';
 
-    $content .= '<br />';
-    $content .= '<input type="phone" name="phone" placeholder="Phone Number>';
-
-    $content .= '<select name="service" id="services">';
-    $content .= '<option value="design"> Web Design </option>';
+    $content .= '<select name="service" id="services" style="width: 90%;">';
+    $content .= '<option value="design"> Graphic Design </option>';
     $content .= '<option value="development"> Web Development </option>';
-    $content .= '<option value="maintanance"> Web Maintanance </option>';
+    $content .= '<option value="maintenance"> Web Maintenance </option>';
     $content .= '</select>';
+    $content .= '</div>';
 
-    $content .= '<br />';
-    $content .= '<textarea name="message" placeholder="Message...">';
-
+    $content .= '<textarea name="message" placeholder="Message..."></textarea>';
     $content .= '<input type="submit" name="send" value="Submit">';
 
     $content .= '</form>';
