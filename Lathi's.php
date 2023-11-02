@@ -17,33 +17,28 @@ function Contactform(){
     $content .= '.form-container {';
     $content .= '    width: 80%;';
     $content .= '    margin: 0 auto;';
-    $content .= '    align-items: center;';
-    $content .= '    justify-content: center;';
     $content .= '}';
     $content .= '.first-row, .second-row {';
     $content .= 'display: flex;';
     $content .= 'justify-content: space-around;';
     $content .= '}';
-    $content .= 'input[type="text"], input[type="email"], input[name="phone", textarea, select{';
+    $content .= 'input[type="text"], input[type="email"], select{';
     $content .= '    width: 90% !important;';
     $content .= '   height: 40px;';
-    $content .= '    padding: 10px;';
+    $content .= '    padding: 10px;'; 
     $content .= '    margin-bottom: 10px;';
-    $content .= '    border: 1px solid white;'; // Set input field border color to white
-    $content .= '    color: white;'; // Set input field text color to white
-    $content .= '    background-color: transparent;'; // Set input field background color to transparent
+    $content .= '    border: 1px solid white;'; 
+    $content .= '    color: white;';
+    $content .= '    background-color: transparent;';
     $content .= '}';
-    $content .= ' .second-row {';
-    $content .= '   margin-bottom: 3rem;';
-    $content .= '}';
-    $content .= 'input[type="submit"] {';
-    $content .= '    background-color: #2E2F31;';
-    $content .= '    color: #DC143C;';
-    $content .= '    padding: 10px 20px;';
-    $content .= '    border: 2px solid #DC143C;';
-    $content .= '   align-item: center;';
-    $content .= '    font-family: "Lato", sans-serif;';
-    $content .= '    cursor: pointer;';
+    $content .= 'textarea {';
+    $content .= '    width: 100% !important;';
+    $content .= '   height: 100px;';
+    $content .= '    padding: 10px;'; 
+    $content .= '    margin-bottom: 10px;';
+    $content .= '    border: 1px solid white;'; 
+    $content .= '    color: white;';
+    $content .= '    background-color: transparent;';
     $content .= '}';
     $content .= '</style>';
 
@@ -54,24 +49,40 @@ function Contactform(){
     $content .= '<form method="post" action="https://formspree.io/f/mlekqqjp" >';
     
     $content .= '<div class="first-row">';
-    $content .= '<input type="text" name="name" placeholder="Enter your name" style="width: 90%;">';
+    // Name
+    $content .= '<input type="text" name="name" placeholder="Enter your name" style="width: 95%;">';
 
-    $content .= '<input type="email" name="email" placeholder="Email Address" style="width: 90%;">';
+    // Email
+    $content .= '<input type="email" name="email" placeholder="Email Address" style="width: 95%; margin-left: 4%;">';
     $content .= '</div>';
 
     $content .= '<br />';
     $content .= '<div class=" second-row">';
-    $content .= '<input type="phone" name="phone" placeholder="Phone Number" style="width: 90%;">';
+    // Phone
+    $content .= '<input type="phone" name="phone" id="phone" placeholder="Phone Number" style="width: 95%; width: 90% !important;
+    height: 40px;
+    padding: 10px; 
+    margin-bottom: 10px;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent">';
 
-    $content .= '<select name="service" id="services" style="width: 90%;">';
+    // Select Button
+    $content .= '<select name="service" id="services" style="width: 95%; margin-left: 4%;">';
     $content .= '<option value="design"> Graphic Design </option>';
     $content .= '<option value="development"> Web Development </option>';
     $content .= '<option value="maintenance"> Web Maintenance </option>';
     $content .= '</select>';
     $content .= '</div>';
-
-    $content .= '<textarea name="message" placeholder="Message..."></textarea>';
-    $content .= '<input type="submit" name="send" value="Submit">';
+    // textarea
+    $content .= '<textarea name="message" placeholder="Message..." style="margin-top: 3%;"></textarea>';
+    // Button
+    $content .= '<input type="submit" name="send" value="Submit" style="margin-top: 3%; background-color: #2E2F31;  color: #DC143C;
+    padding: 10px 20px;
+    border: 2px solid #DC143C;
+    align-item: center;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;">';
 
     $content .= '</form>';
     $content .= '</div>';
